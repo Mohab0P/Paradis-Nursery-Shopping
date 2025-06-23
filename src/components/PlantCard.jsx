@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlantCard = ({ plant, addToCart }) => {
+const PlantCard = ({ plant, addToCart, isInCart }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="aspect-w-1 aspect-h-1">
@@ -17,10 +17,15 @@ const PlantCard = ({ plant, addToCart }) => {
           <span className="text-xl font-bold text-green-600">${plant.price}</span>
           <button
             onClick={() => addToCart(plant)}
-            className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 flex items-center space-x-1"
+            disabled={isInCart}
+            className={`font-medium py-2 px-4 rounded-md transition-colors duration-200 flex items-center space-x-1 ${
+              isInCart 
+                ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+                : 'bg-green-600 hover:bg-green-700 text-white'
+            }`}
           >
             <span>🛒</span>
-            <span>Add to Cart</span>
+            <span>{isInCart ? 'Added to Cart' : 'Add to Cart'}</span>
           </button>
         </div>
       </div>

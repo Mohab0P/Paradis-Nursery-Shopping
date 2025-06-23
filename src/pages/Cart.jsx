@@ -24,7 +24,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart }) => {
             to="/products"
             className="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200"
           >
-            Start Shopping
+            Continue Shopping
           </Link>
         </div>
       </div>
@@ -36,7 +36,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart }) => {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Shopping Cart</h1>
         <p className="text-gray-600">
-          {getTotalItems()} {getTotalItems() === 1 ? 'item' : 'items'} in your cart
+          Total items in cart: {getTotalItems()}
         </p>
       </div>
 
@@ -55,7 +55,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart }) => {
 
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex justify-between items-center mb-6">
-          <span className="text-xl font-semibold text-gray-900">Total:</span>
+          <span className="text-xl font-semibold text-gray-900">Total Cost:</span>
           <span className="text-2xl font-bold text-green-600">${calculateTotal()}</span>
         </div>
         
@@ -68,7 +68,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart }) => {
           </Link>
           <button
             className="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200"
-            onClick={() => alert('Checkout functionality would be implemented here!')}
+            onClick={() => alert('Coming Soon: Checkout functionality will be available soon!')}
           >
             Checkout
           </button>

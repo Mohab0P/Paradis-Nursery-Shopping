@@ -18,11 +18,10 @@ function Landing() {
     >
       <div className="text-center text-white z-10 max-w-4xl mx-auto">
         <h1 className="text-6xl font-bold mb-6 drop-shadow-lg">
-          Welcome to Paradise Nursery
+          Paradise Nursery
         </h1>
-        <p className="text-xl mb-8 drop-shadow-lg leading-relaxed">
-          Discover our beautiful collection of plants that will transform your space into a green paradise. 
-          From aromatic herbs to medicinal plants, we have everything you need to create your perfect garden.
+        <p className="text-xl mb-8 drop-shadow-lg leading-relaxed max-w-3xl">
+          Welcome to Paradise Nursery, where green dreams come true! We are a family-owned business dedicated to bringing you the finest selection of houseplants, herbs, and garden favorites. Our passion for plants drives us to provide healthy, beautiful specimens that will thrive in your home and garden. Whether you're a seasoned plant parent or just beginning your green journey, we're here to help you create your own slice of paradise.
         </p>
         <div className="space-y-4">
           <Link
@@ -34,18 +33,18 @@ function Landing() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
               <div className="text-4xl mb-2">🌿</div>
-              <h3 className="font-semibold mb-2">Aromatic Plants</h3>
-              <p className="text-sm">Fresh herbs and fragrant plants for your kitchen and garden</p>
+              <h3 className="font-semibold mb-2 text-black">Aromatic Plants</h3>
+              <p className="text-sm text-black">Fresh herbs and fragrant plants for your kitchen and garden</p>
             </div>
             <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
               <div className="text-4xl mb-2">🌱</div>
-              <h3 className="font-semibold mb-2">Medicinal Plants</h3>
-              <p className="text-sm">Natural healing plants for wellness and health</p>
+              <h3 className="font-semibold mb-2 text-black">Medicinal Plants</h3>
+              <p className="text-sm text-black">Natural healing plants for wellness and health</p>
             </div>
             <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
               <div className="text-4xl mb-2">🌸</div>
-              <h3 className="font-semibold mb-2">Decorative Plants</h3>
-              <p className="text-sm">Beautiful plants to enhance your living space</p>
+              <h3 className="font-semibold mb-2 text-black">Decorative Plants</h3>
+              <p className="text-sm text-black" >Beautiful plants to enhance your living space</p>
             </div>
           </div>
         </div>

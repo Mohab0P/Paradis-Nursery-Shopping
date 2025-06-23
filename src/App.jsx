@@ -1,13 +1,14 @@
 
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import ProductListing from './pages/ProductListing';
 import Cart from './pages/Cart';
 
-function App() {
+function AppContent() {
   const [cart, setCart] = useState([]);
+  const location = useLocation();
 
   const addToCart = (plant) => {
     setCart(prevCart => {
@@ -44,16 +45,31 @@ function App() {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
+  // Show navbar only on product listing and cart pages
+  const showNavbar = location.pathname === '/products' || location.pathname === '/cart';
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {showNavbar && <Navbar cartItemCount={getTotalItems()} />}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route 
+          path="/products" 
+          element={<ProductListing addToCart={addToCart} cart={cart} />} 
+        />
+        <Route 
+          path="/cart" 
+          element={<Cart cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />} 
+        />
+      </Routes>
+    </div>
+  );
+}
+
+function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar cartItemCount={getTotalItems()} />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/products" element={<ProductListing addToCart={addToCart} />} />
-          <Route path="/cart" element={<Cart cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />} />
-        </Routes>
-      </div>
+      <AppContent />
     </Router>
   );
 }
